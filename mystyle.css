@@ -1,26 +1,32 @@
-.hero_page{
-    background-image: url("C:\Users\ngigi\OneDrive\Documents\Web Design Advanced\Coursework\APT4035Coursework\Morning.jpg");
+#hero_page{
+    background-size: 100% 100%;
+    border-radius: 10px;
+    margin: 1.5%;
 }
 .hero_cont{
     display: flex;
     flex-direction: column;
-    margin: 1%;
     border-radius: 10px;
     height: 82vh;
-    background-color: #9ddfef;
 }
 .hero_cont h3{
-    color: red;
+    color: black;
     padding-left: 1.5%;
-    height: 18%;
+    height: 70%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .hero_cont h1{
     justify-content: flex-end;
-    color: red;
+    color: white;
     padding-top: 1%;
     padding-left: 1.5%;
+    font-size: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .Time_icon{
     align-self:flex-end;
     width: 50%;
+}
+#Welcome_text{
+    font-family: 'Times New Roman', Times, serif;
 }
