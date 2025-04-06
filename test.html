@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        #portfolio {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #filter-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 20px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        #portfolio-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+            min-height: 300px; /* Added fixed height for items */
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px; /* Fixed height for images */
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            transition: bottom 0.3s ease;
+        }
+
+        .portfolio-item:hover .overlay {
+            bottom: 0;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Added description styles */
+        .description {
+            padding: 15px;
+            background: #fff;
+        }
+
+        .description h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .description p {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div id="portfolio">
+        <h1>My Projects</h1>
+        
+        <!-- Filter Buttons -->
+        <div id="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Design</button>
+            <button class="filter-btn" data-filter="app">App Development</button>
+            <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+        </div>
+
+        <!-- Portfolio Items -->
+        <div id="portfolio-items">
+            <div class="portfolio-item" data-category="web">
+                <img src="https://via.placeholder.com/300x200" alt="Web Project 1">
+                <div class="description">
+                    <h3>E-commerce Website</h3>
+                    <p>Full-stack online store built with React and Node.js</p>
+                </div>
+                <div class="overlay">
+                    <h3>View Project</h3>
+                    <p>Click to see details</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="app">
+                <img src="https://via.placeholder.com/300x200" alt="App Project">
+                <div class="description">
+                    <h3>Fitness Tracker App</h3>
+                    <p>Mobile workout companion using React Native</p>
+                </div>
+                <div class="overlay">
+                    <h3>View Project</h3>
+                    <p>Click to see details</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="graphic">
+                <img src="https://via.placeholder.com/300x200" alt="Graphic Design">
+                <div class="description">
+                    <h3>Brand Identity</h3>
+                    <p>Logo and branding package for local business</p>
+                </div>
+                <div class="overlay">
+                    <h3>View Project</h3>
+                    <p>Click to see details</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="web">
+                <img src="https://via.placeholder.com/300x200" alt="Web Project 2">
+                <div class="description">
+                    <h3>Portfolio Website</h3>
+                    <p>Responsive portfolio using HTML, CSS, and JavaScript</p>
+                </div>
+                <div class="overlay">
+                    <h3>View Project</h3>
+                    <p>Click to see details</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="app">
+                <img src="https://via.placeholder.com/300x200" alt="App Project 2">
+                <div class="description">
+                    <h3>Weather App</h3>
+                    <p>Real-time weather tracking application</p>
+                </div>
+                <div class="overlay">
+                    <h3>View Project</h3>
+                    <p>Click to see details</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="graphic">
+                <img src="https://via.placeholder.com/300x200" alt="Graphic Design 2">
+                <div class="description">
+                    <h3>Marketing Materials</h3>
+                    <p>Digital marketing campaign assets</p>
+                </div>
+                <div class="overlay">
+                    <h3>View Project</h3>
+                    <p>Click to see details</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            // Filter function
+            const filterPortfolio = (category) => {
+                portfolioItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (category === 'all' || category === itemCategory) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            };
+
+            // Add click event to filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Get filter category
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    // Filter items
+                    filterPortfolio(filterValue);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

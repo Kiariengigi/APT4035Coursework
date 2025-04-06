@@ -9,10 +9,94 @@
 <body>
     <section id="hero_page">
 <div class="hero_cont">
-<h3 id="name">Kiarie Ngigi</h3>
-<h1 > Hello, Good <span id="Welcome_text">Morning!</span></h1>
+    <div class="nav">
+        <h3 id="name">Kiarie Ngigi</h3>
+        <label class="toggle-switch">
+            <input type="checkbox" id="modeToggle">
+            <span class="slider"></span>
+          </label>
+    </div>
+<h1> Hello, Good <span id="Welcome_text">Morning</span></h1>
 </div>
     </section>
+    <section class="About_me">
+        <h1>I'm Kiarie <span><img style="width: 4%; padding-bottom: 3%;" src="user.png" alt=""></span></h1>
+        <div class="bio">
+            <p>
+                A passionate web designer who brings ideas to life through clean, modern, and user-focused design.
+                With a sharp eye for detail and a love for intuitive digital experiences, I specialize in crafting
+                responsive websites that not only look good but also work seamlessly across all devices. Whether it's a 
+                sleek landing page or a full-scale web app, I design with purpose and code with precision.
+            </p>
+            <div class="languages" >
+                <img id="html" src="html.png" alt="">
+                <img id="java" src="java-script.png" alt="">
+            </div>
+        </div>
+    </section>
+
+        <div id="portfolio">
+            <h1>My Projects</h1>
+            
+            <!-- Filter Buttons -->
+            <div id="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">HTML & CSS</button>
+                <button class="filter-btn" data-filter="app">HTML</button>
+                <button class="filter-btn" data-filter="graphic">JavaScript</button>
+            </div>
+    
+            <!-- Portfolio Items -->
+            <div id="portfolio-items">
+                <div class="portfolio-item" data-category="web">
+                    <img src="izuddin-helmi-adnan-K5ChxJaheKI-unsplash.jpg" alt="Web Project 1">
+                    <div class="description">
+                        <h3>Premier League Table</h3>
+                        <p>Full Premier League table made with HTML and CSS</p>
+                    </div>
+                    <div class="overlay">
+                        <h3>View Project</h3>
+                        <p>Click to see details</p>
+                    </div>
+                </div>
+    
+                <div class="portfolio-item" data-category="app">
+                    <img src="dorian-mongel-Yui3DZiX7yM-unsplash.jpg" alt="App Project">
+                    <div class="description">
+                        <h3>Castle Website</h3>
+                        <p>Castle webpage made with html</p>
+                    </div>
+                    <div class="overlay">
+                        <h3>View Project</h3>
+                        <p>Click to see details</p>
+                    </div>
+                </div>
+    
+                <div class="portfolio-item" data-category="graphic">
+                    <img src="jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Graphic Design">
+                    <div class="description">
+                        <h3>Restaurant menu</h3>
+                        <p>Adaptive menu made with Javascript and html</p>
+                    </div>
+                    <div class="overlay">
+                        <h3>View Project</h3>
+                        <p>Click to see details</p>
+                    </div>
+                </div>
+    
+                <div class="portfolio-item" data-category="web">
+                    <img src="joanna-kosinska-1_CMoFsPfso-unsplash.jpg" alt="Web Project 2">
+                    <div class="description">
+                        <h3>Portfolio Website</h3>
+                        <p>Responsive portfolio using HTML, CSS, and JavaScript</p>
+                    </div>
+                    <div class="overlay">
+                        <h3>View Project</h3>
+                        <p>Click to see details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 <script src="index.js"></script>
 </html>
