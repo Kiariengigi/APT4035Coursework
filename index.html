@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiarie Ngigi</title>
     <link rel="stylesheet" href="mystyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Funnel+Display:wght@300..800&family=Parkinsans:wght@300..800&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <section id="hero_page">
@@ -17,6 +20,7 @@
           </label>
     </div>
 <h1> Hello, Good <span id="Welcome_text">Morning</span></h1>
+<div class="clock" style="color: violet; font-size: 20px;" id="clock">00:00:00</div>
 </div>
     </section>
     <section class="About_me">
@@ -32,6 +36,31 @@
                 <img id="html" src="html.png" alt="">
                 <img id="java" src="java-script.png" alt="">
             </div>
+            <div class="skills-container">
+                <div class="skills-column">
+                    <div class="skill-item" data-skill="HTML/CSS" data-percentage="95">
+                        <div class="skill-info">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar blue-gradient">
+                                <div class="shimmer-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="skill-item" data-skill="JavaScript" data-percentage="85">
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar yellow-gradient">
+                                <div class="shimmer-effect"></div>
+                            </div>
+                        </div>
+                    </div>
         </div>
     </section>
 
@@ -97,6 +126,63 @@
                 </div>
             </div>
         </div>
+        <section class="blog-section">
+            <div class="container">
+                <h2 class="section-title">My Blog</h2>
+                <div class="blog-filter">
+                    <button class="filter-btn1 active1" data-category="all">All</button>
+                    <button class="filter-btn1" data-category="technology">Technology</button>
+                    <button class="filter-btn1" data-category="design">Design</button>
+                    <button class="filter-btn1" data-category="sports">Sports</button>
+                </div>
+                <div class="blog-grid" id="blogList">
+                </div>
+                <div class="blog-pagination">
+                    <button class="load-more-btn">Load More</button>
+                </div>
+            </div>
+        </section>
+        <section class="contact_sec">
+            <div class="contact-card">
+                <h2 class="contact-title">CONTACT</h2>
+                
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName">
+                            <span class="error-message">Please enter your first name</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName">
+                            <span class="error-message">Please enter your last name</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email">
+                        <span class="error-message">Please enter a valid email address</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                        <span class="error-message">Please enter your message</span>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">SEND</button>
+                </form>
+                
+                <div id="messageSent" class="message-sent">
+                    <h3>Thank you!</h3>
+                    <p>Your message has been sent successfully.</p>
+                </div>
+            </div>
+        </section>
+        
 </body>
 <script src="index.js"></script>
 </html>
